@@ -1,6 +1,9 @@
 containers/
 exercism/
 karabiner/automatic_backups
+neofetch/
+NuGet/
+wireshark/
 
 # OS Junk
 .DS_Store

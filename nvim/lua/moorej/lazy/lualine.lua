@@ -36,7 +36,8 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = {
+				lualine_b = { "buffers" },
+				lualine_c = {
 					{
 						"branch",
 						fmt = trim(false),
@@ -83,7 +84,6 @@ return {
 						"searchcount",
 					},
 				},
-				lualine_c = {},
 				lualine_x = {
 					{
 						"diagnostics",

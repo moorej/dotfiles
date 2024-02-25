@@ -12,6 +12,7 @@ return {
 
 	config = function()
 		local lsp_zero = require("lsp-zero")
+		lsp_zero.preset("recommended")
 
         -- stylua: ignore
         lsp_zero.on_attach(function(_, bufnr)
@@ -30,6 +31,7 @@ return {
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         end)
+		lsp_zero.setup()
 
 		require("mason").setup()
 

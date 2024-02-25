@@ -10,6 +10,12 @@ config.font = wezterm.font_with_fallback({
 })
 
 -- App Config
+config.show_update_window = true
+
 config.quit_when_all_windows_are_closed = false
+
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+config.show_new_tab_button_in_tab_bar = false
 
 return config

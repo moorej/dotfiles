@@ -134,9 +134,17 @@ return {
 		})
 
 		ins_left({
-			"filename",
-			cond = conditions.buffer_not_empty,
-			color = { fg = colors.magenta, gui = "bold" },
+			"buffers",
+			mode = 2,
+			buffers_color = {
+				active = { fg = colors.bg, bg = colors.blue, gui = "bold" },
+				inactive = { fg = colors.fg, bg = colors.bg },
+			},
+			symbols = {
+				modified = " ●", -- Text to show when the buffer is modified
+				alternate_file = "", -- Text to show to identify the alternate file
+				directory = "", -- Text to show when the buffer is a directory
+			},
 		})
 
 		ins_left({ "location" })

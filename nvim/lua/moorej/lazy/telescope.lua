@@ -12,8 +12,17 @@ return {
 
 	config = function()
 		local telescope = require("telescope")
-		telescope.setup({})
 		telescope.load_extension("fzf")
+		telescope.setup({
+			defaults = {
+				mappings = {
+					i = {
+						["<C-j>"] = require("telescope.actions").move_selection_next,
+						["<C-k>"] = require("telescope.actions").move_selection_previous,
+					},
+				},
+			},
+		})
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>pf", builtin.find_files, {})

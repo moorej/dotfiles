@@ -1,5 +1,12 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
+local action = wezterm.action
+
+-- Shortcuts
+config.keys = {
+	{ key = "H", mods = "CTRL|SHIFT", action = action.DisableDefaultAssignment },
+	{ key = "p", mods = "CMD", action = action.PaneSelect },
+}
 
 -- UI Config
 config.color_scheme = "Chalk (base16)"

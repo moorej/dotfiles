@@ -19,7 +19,8 @@ return {
 	},
 
 	config = function()
-		require("conform").setup({
+		local conform = require("conform")
+		conform.setup({
 			formatters_by_ft = {
 				html = { "prettierd" },
 				json = { "prettierd" },

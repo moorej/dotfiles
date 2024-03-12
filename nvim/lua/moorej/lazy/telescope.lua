@@ -6,17 +6,25 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"folke/trouble.nvim",
 	},
 
 	lazy = false,
 
 	config = function()
 		local telescope = require("telescope")
+		local trouble = require("trouble.providers.telescope")
 		telescope.load_extension("fzf")
 		telescope.setup({
 			defaults = {
 				mappings = {
 					i = {
+						["<C-j>"] = require("telescope.actions").move_selection_next,
+						["<C-k>"] = require("telescope.actions").move_selection_previous,
+						["<c-t>"] = trouble.open_with_trouble,
+					},
+					n = {
+						["<c-t>"] = trouble.open_with_trouble,
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 					},

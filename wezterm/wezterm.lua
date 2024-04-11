@@ -84,8 +84,6 @@ local config = {
 		{ key = "7", mods = "LEADER", action = wezterm.action({ ActivateTab = 6 }) },
 		{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
 		{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
-		{ key = "&", mods = "LEADER|SHIFT", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 
 		{ key = "n", mods = "SHIFT|CTRL", action = "ToggleFullScreen" },
 
@@ -95,6 +93,10 @@ local config = {
 		{ key = "+", mods = "SHIFT|CTRL", action = "IncreaseFontSize" },
 		{ key = "-", mods = "SHIFT|CTRL", action = "DecreaseFontSize" },
 		{ key = "0", mods = "SHIFT|CTRL", action = "ResetFontSize" },
+
+		{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
+		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
+		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
 	},
 
 	-- UI Config

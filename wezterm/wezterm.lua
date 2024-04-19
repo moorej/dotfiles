@@ -85,7 +85,7 @@ local config = {
 		{ key = "8", mods = "LEADER", action = wezterm.action({ ActivateTab = 7 }) },
 		{ key = "9", mods = "LEADER", action = wezterm.action({ ActivateTab = 8 }) },
 
-		{ key = "n", mods = "SHIFT|CTRL", action = "ToggleFullScreen" },
+		-- { key = "n", mods = "SHIFT|CTRL", action = "ToggleFullScreen" },
 
 		{ key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },
 		{ key = "c", mods = "CMD", action = wezterm.action.CopyTo("Clipboard") },

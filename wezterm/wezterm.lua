@@ -97,6 +97,8 @@ local config = {
 		{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
 		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
 		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+
+		{ key = "[", mods = "CTRL", action = wezterm.action.ActivateCopyMode },
 	},
 
 	-- UI Config

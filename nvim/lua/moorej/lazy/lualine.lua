@@ -185,6 +185,13 @@ return {
 
 		-- Add components to right sections
 		ins_right({
+			function()
+				return require("auto-session.lib").current_session_name()
+			end,
+			color = { fg = colors.magenta },
+		})
+
+		ins_right({
 			"o:encoding", -- option component same as &encoding in viml
 			fmt = string.upper, -- I'm not sure why it's upper case either ;)
 			cond = conditions.hide_in_width,

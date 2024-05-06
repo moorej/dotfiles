@@ -1,19 +1,8 @@
 return {
-	"rmagatti/session-lens",
+	"rmagatti/auto-session",
 
 	dependencies = {
-		"rmagatti/auto-session",
 		"nvim-telescope/telescope.nvim",
-	},
-
-	keys = {
-		{
-			"<leader>ss",
-			function()
-				require("session-lens").search_session()
-			end,
-			desc = "Show sessions",
-		},
 	},
 
 	config = function()
@@ -29,7 +18,11 @@ return {
 				end,
 			},
 		})
-
-		require("session-lens").setup({})
+		vim.keymap.set(
+			"n",
+			"<leader>ss",
+			require("auto-session.session-lens").search_session,
+			{ desc = "Show sessions" }
+		)
 	end,
 }

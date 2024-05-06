@@ -1,10 +1,17 @@
-.jira/
+# General
 containers/
-exercism/
 karabiner/automatic_backups
 neofetch/
 NuGet/
 wireshark/
+
+# Home stuff 
+exercism/
+
+# Work stuff
+.jira/
+github-copilot/
+nvim/lua/moorej/lazy/copilot.lua
 
 # OS Junk
 .DS_Store

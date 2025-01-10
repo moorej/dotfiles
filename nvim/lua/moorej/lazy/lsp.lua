@@ -94,6 +94,24 @@ return {
 						},
 					})
 				end,
+				powershell_es = function()
+					require("lspconfig").powershell_es.setup({
+						filetypes = { "ps1", "psm1", "psd1" },
+						shell = "pwsh",
+						bundle_path = "~/.local/share/nvim/mason/packages/powershell-editor-services",
+						-- cmd = {
+						-- 	"pwsh",
+						-- 	"-NoLogo",
+						-- 	"-NoProfile",
+						-- 	"-Command",
+						-- 	"~/.local/share/nvim/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1",
+						-- },
+						-- settings = { powershell = { codeFormatting = { Preset = "OTBS" } } },
+						-- init_options = {
+						-- 	enableProfileLoading = false,
+						-- },
+					})
+				end,
 			},
 		})
 	end,

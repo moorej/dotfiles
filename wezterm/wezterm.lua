@@ -59,22 +59,33 @@ local config = {
 		split_nav("move", "k"),
 		split_nav("move", "l"),
 
-		-- resize panes
-		split_nav("resize", "h"),
-		split_nav("resize", "j"),
-		split_nav("resize", "k"),
-		split_nav("resize", "l"),
-
-		-- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
-		{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
+		-- Split hositontally
 		{ key = "-", mods = "LEADER", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+		-- Split vertically
 		{
 			key = "\\",
 			mods = "LEADER",
 			action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
 		},
+		-- Open new window
+		{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
+		-- Close current tab
+		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
+		-- Close current pane
+		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+		-- Zoom current pane
 		{ key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
+		-- Create new tab
 		{ key = "c", mods = "LEADER", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+		-- resize panes
+		split_nav("resize", "h"),
+		split_nav("resize", "j"),
+		split_nav("resize", "k"),
+		split_nav("resize", "l"),
+		-- Swap panes
+		{ key = "0", mods = "CTRL", action = wezterm.action.PaneSelect({ mode = "SwapWithActive" }) },
+
+		-- Activate tab number 'x'
 		{ key = "1", mods = "LEADER", action = wezterm.action({ ActivateTab = 0 }) },
 		{ key = "2", mods = "LEADER", action = wezterm.action({ ActivateTab = 1 }) },
 		{ key = "3", mods = "LEADER", action = wezterm.action({ ActivateTab = 2 }) },
@@ -87,17 +98,19 @@ local config = {
 
 		-- { key = "n", mods = "SHIFT|CTRL", action = "ToggleFullScreen" },
 
+		-- Use system Clipboard
 		{ key = "v", mods = "CMD", action = wezterm.action.PasteFrom("Clipboard") },
 		{ key = "c", mods = "CMD", action = wezterm.action.CopyTo("Clipboard") },
 
+		-- Increase/Decrease font size
 		{ key = "+", mods = "SHIFT|CTRL", action = "IncreaseFontSize" },
 		{ key = "-", mods = "SHIFT|CTRL", action = "DecreaseFontSize" },
 		{ key = "0", mods = "SHIFT|CTRL", action = "ResetFontSize" },
 
-		{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
-		{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
-		{ key = "x", mods = "LEADER", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+		-- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
+		{ key = "a", mods = "LEADER|CTRL", action = wezterm.action({ SendString = "\x01" }) },
 
+		-- Copy mode
 		{ key = "[", mods = "CTRL", action = wezterm.action.ActivateCopyMode },
 	},
 

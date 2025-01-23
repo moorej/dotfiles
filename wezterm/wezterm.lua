@@ -115,7 +115,9 @@ local config = {
 	},
 
 	-- UI Config
-	color_scheme = "Chalk (base16)",
+	-- color_scheme = "Chalk (base16)",
+	-- color_scheme = "tokyonight-day",
+	color_scheme = "tokyonight",
 	font_size = 13.0,
 
 	font = wezterm.font_with_fallback({

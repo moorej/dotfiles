@@ -19,7 +19,8 @@ return {
 
 	config = function()
 		local telescope = require("telescope")
-		local trouble = require("trouble.providers.telescope")
+		local open_with_trouble = require("trouble.sources.telescope").open
+
 		telescope.load_extension("fzf")
 		telescope.load_extension("live_grep_args")
 		telescope.load_extension("session-lens")
@@ -29,10 +30,10 @@ return {
 					i = {
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
-						["<c-t>"] = trouble.open_with_trouble,
+						["<c-t>"] = open_with_trouble,
 					},
 					n = {
-						["<c-t>"] = trouble.open_with_trouble,
+						["<c-t>"] = open_with_trouble,
 						["<C-j>"] = require("telescope.actions").move_selection_next,
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 					},

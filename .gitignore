@@ -1,8 +1,9 @@
 # General
+NuGet/
 containers/
 karabiner/automatic_backups
 neofetch/
-NuGet/
+nvim/lazy-lock.json
 wireshark/
 
 # Home stuff 

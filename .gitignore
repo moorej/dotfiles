@@ -1,6 +1,8 @@
 # General
 NuGet/
 containers/
+ghc/
+htop/
 karabiner/automatic_backups
 neofetch/
 nvim/lazy-lock.json

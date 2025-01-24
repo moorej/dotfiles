@@ -1,8 +1,10 @@
 # General
 NuGet/
 containers/
+fish/
 ghc/
 htop/
+iterm2/
 karabiner/automatic_backups
 neofetch/
 nvim/lazy-lock.json
@@ -14,6 +16,7 @@ exercism/
 # Work stuff
 .jira/
 github-copilot/
+hs/
 nvim/lua/moorej/lazy/copilot.lua
 
 # OS Junk
